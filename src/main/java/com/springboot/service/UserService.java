@@ -8,12 +8,16 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-
 @Service
 @Profile(value = {"local", "dev", "prod"})
 public class UserService {
-    @Autowired
-    private UserRepository repository;
+
+    private final UserRepository repository;
+
+    public UserService(@Autowired UserRepository repository) {
+        this.repository = repository;
+    }
+
 
     public List<User> getUsers() {
         return repository.findAll();

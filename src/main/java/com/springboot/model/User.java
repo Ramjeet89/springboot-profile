@@ -1,17 +1,14 @@
 package com.springboot.model;
 
-import lombok.Getter;
-import lombok.Setter;
+import lombok.Data;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Setter
-@Getter
-
-@Table(name = "users")
+@Data
+@Table(name = "USERS")
 public class User {
 
     @Id
